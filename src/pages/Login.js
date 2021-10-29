@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory, useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Login = () => {
@@ -45,6 +46,13 @@ const Login = () => {
           >
             Sign In with Google
           </button>
+          <p className="my-4">Or</p>
+          <Link
+            className="bg-blue-700 py-2 px-5 text-white capitalize rounded-md shadow-md"
+            to="/register"
+          >
+            Register Here
+          </Link>
         </div>
       </div>
     </div>

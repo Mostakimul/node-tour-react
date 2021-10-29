@@ -92,7 +92,7 @@ const TheNavbar = () => {
                 {user?.email ? (
                   <>
                     <div className="bg-gray-800 p-1 rounded-full text-gray-400 text-center hover:text-white">
-                      Mohit
+                      {user?.displayName}
                     </div>
                     <div className="ml-3 relative">
                       <div>
