@@ -1,11 +1,12 @@
 import { Disclosure } from '@headlessui/react';
 import { React } from 'react';
 import { FaSignOutAlt } from 'react-icons/fa';
-// import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
 import { HiMenu, HiX } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const TheNavbar = () => {
+  const { user, logOut } = useAuth();
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -88,22 +89,44 @@ const TheNavbar = () => {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 block sm:flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <div className="bg-gray-800 p-1 rounded-full text-gray-400 text-center hover:text-white">
-                  Mohit
-                </div>
-                <div className="ml-3 relative">
-                  <div>
-                    <div className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
-                      <button className="text-white font-medium">
-                        Logout{' '}
-                        <FaSignOutAlt
-                          className="inline-block w-5 h-5 text-white
-                      bg-gray-900 rounded-full"
-                        />
-                      </button>
+                {user?.email ? (
+                  <>
+                    <div className="bg-gray-800 p-1 rounded-full text-gray-400 text-center hover:text-white">
+                      Mohit
                     </div>
+                    <div className="ml-3 relative">
+                      <div>
+                        <div className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                          <button
+                            onClick={logOut}
+                            className="text-white font-medium"
+                          >
+                            Logout{' '}
+                            <FaSignOutAlt
+                              className="inline-block w-5 h-5 text-white
+                      bg-gray-900 rounded-full"
+                            />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div className="relative text-center">
+                    <Link
+                      to="/login"
+                      className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      to="/register"
+                      className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >
+                      Register
+                    </Link>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
