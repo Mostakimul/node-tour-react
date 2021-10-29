@@ -3,6 +3,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
   updateProfile,
@@ -24,9 +25,14 @@ const useFirebase = () => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  // sign in with email and password
+  // create account with email and password
   const createAccountWithEmail = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  // sign in with email and password
+  const loginWithEmailAndPassword = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
   };
 
   // update displayName
@@ -73,6 +79,7 @@ const useFirebase = () => {
     logOut,
     createAccountWithEmail,
     updateName,
+    loginWithEmailAndPassword,
   };
 };
 
