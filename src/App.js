@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import TheFooter from './components/common/TheFooter';
 import TheNavbar from './components/common/TheNavbar';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
@@ -57,6 +58,7 @@ function App() {
             <Error />
           </Route>
         </Switch>
+        <TheFooter />
       </Router>
     </AuthProvider>
   );
