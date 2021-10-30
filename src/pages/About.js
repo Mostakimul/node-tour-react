@@ -49,7 +49,7 @@ const About = () => {
             elit bespoke vinyl art party Pitchfork selfies master cleanse.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-gray-50 py-10">
-            <div className="justify-self-center md:justify-self-start mx-10">
+            <div className="justify-self-center md:justify-self-end mx-10">
               <h4 className="text-4xl md:text-7xl">1,115</h4>
               <p className="text-lg md:text-3xl">Trips</p>
             </div>
