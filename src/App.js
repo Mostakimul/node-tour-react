@@ -5,6 +5,7 @@ import DetailsDestinantion from './components/destination/DetailsDestinantion';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
 import AddDestinations from './pages/Admin/AddDestinations';
+import AddTour from './pages/Admin/AddTour';
 import AllDestination from './pages/AllDestination';
 import AllTourPackages from './pages/AllTourPackages';
 import Contact from './pages/Contact';
@@ -56,8 +57,11 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/admin/add-destinantion">
+          <Route exact path="/admin/add-destinantion">
             <AddDestinations />
+          </Route>
+          <Route exact path="/admin/add-tour">
+            <AddTour />
           </Route>
           <Route exact path="/">
             <Home />
