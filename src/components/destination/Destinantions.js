@@ -24,7 +24,7 @@ const Destinantions = () => {
   }, []);
 
   return (
-    <div className="container py-5">
+    <div className=" py-5">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {load ? (
           <div>

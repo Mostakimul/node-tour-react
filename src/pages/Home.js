@@ -10,7 +10,7 @@ const Home = () => {
       <Header />
       {/* All Destinantion Part */}
       <section className="container">
-        <h2 className="text-3xl font-semibold text-center py-5">
+        <h2 className="text-gray-900 text-3xl font-semibold text-center py-5">
           Our Destinations
         </h2>
         <Destinantions />
