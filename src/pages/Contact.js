@@ -28,6 +28,7 @@ const Contact = () => {
           backgroundPosition: 'center',
           height: '30vh',
         }}
+        className="flex justify-center items-center"
       >
         <h2 className="text-center py-5 text-gray-100 text-3xl font-medium">
           Contact Page
