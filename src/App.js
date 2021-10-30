@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TheFooter from './components/common/TheFooter';
 import TheNavbar from './components/common/TheNavbar';
+import DetailsDestinantion from './components/destination/DetailsDestinantion';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
 import AddDestinations from './pages/Admin/AddDestinations';
@@ -33,6 +34,9 @@ function App() {
           </Route>
           <Route path="/our-destinations">
             <AllDestination />
+          </Route>
+          <Route path="/destination/:id">
+            <DetailsDestinantion />
           </Route>
           <Route path="/event-packages">
             <EventPackage />

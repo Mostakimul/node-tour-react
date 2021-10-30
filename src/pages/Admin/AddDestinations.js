@@ -58,7 +58,7 @@ const AddDestinations = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-3">
           {/* Destination */}
           <label
-            htmlFor="name"
+            htmlFor="destinantion"
             className="block text-sm font-medium text-gray-700"
           >
             Destination :
@@ -69,9 +69,22 @@ const AddDestinations = () => {
             className="mt-1 p-2 border block w-full shadow sm:text-sm border-gray-200 outline-none focus:border-blue-500  ring-gray-400 rounded-md"
           />
           <p>{errors.destinantion && <span>This field is required</span>}</p>
+          {/* Destination small image url */}
+          <label
+            htmlFor="small_img"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Destination small image url :
+          </label>
+          <input
+            type="text"
+            {...register('small_img', { required: true })}
+            className="mt-1 p-2 border block w-full shadow sm:text-sm border-gray-200 outline-none focus:border-blue-500  ring-gray-400 rounded-md"
+          />
+          <p>{errors.small_img && <span>This field is required</span>}</p>
           {/* Destinantion title in details */}
           <label
-            htmlFor="name"
+            htmlFor="destinantion_title"
             className="block text-sm font-medium text-gray-700"
           >
             Detailed Title :
@@ -86,7 +99,7 @@ const AddDestinations = () => {
           </p>
           {/* Destinantion details */}
           <label
-            htmlFor="name"
+            htmlFor="destinantion_details"
             className="block text-sm font-medium text-gray-700"
           >
             Detailed Deatils :
@@ -102,7 +115,7 @@ const AddDestinations = () => {
 
           {/* cover image url */}
           <label
-            htmlFor="name"
+            htmlFor="cover_url"
             className="block text-sm font-medium text-gray-700"
           >
             Cover Image Url :

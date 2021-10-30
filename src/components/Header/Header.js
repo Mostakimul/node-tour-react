@@ -25,8 +25,11 @@ const Header = () => {
               <Link className="bg-red-600 hover:bg-red-700 text-gray-50 py-2 px-5 rounded-md shadow-md m-1 font-medium inline-block">
                 See Our Packages
               </Link>
-              <Link className="bg-blue-600 hover:bg-blue-700 text-gray-50 py-2 px-5 rounded-md shadow-md m-1 font-medium inline-block">
-                Best Destinantions
+              <Link
+                to="/our-destinations"
+                className="bg-blue-600 hover:bg-blue-700 text-gray-50 py-2 px-5 rounded-md shadow-md m-1 font-medium inline-block"
+              >
+                Discover Destinantions
               </Link>
             </div>
           </div>
