@@ -14,7 +14,7 @@ import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import PrivateRoute from './PrivateRoute/PrivateRoute';
+// import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -44,9 +44,9 @@ function App() {
           <Route path="/about-us">
             <About />
           </Route>
-          <PrivateRoute path="/gallery">
+          <Route path="/gallery">
             <Gallery />
-          </PrivateRoute>
+          </Route>
           <Route path="/contact-us">
             <Contact />
           </Route>
