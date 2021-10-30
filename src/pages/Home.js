@@ -1,10 +1,11 @@
 import React from 'react';
+import ChooseUs from '../components/choose/ChooseUs';
 import Destinantions from '../components/destination/Destinantions';
 import Header from '../components/Header/Header';
 
 const Home = () => {
   return (
-    <main>
+    <main className="bg-gray-100">
       {/* Header part */}
       <Header />
       {/* All Destinantion Part */}
@@ -13,6 +14,11 @@ const Home = () => {
           Our Destinations
         </h2>
         <Destinantions />
+      </section>
+
+      {/* Choose us */}
+      <section className="container py-5">
+        <ChooseUs />
       </section>
     </main>
   );
