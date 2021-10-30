@@ -3,6 +3,7 @@ import TheFooter from './components/common/TheFooter';
 import TheNavbar from './components/common/TheNavbar';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
+import AddDestinations from './pages/Admin/AddDestinations';
 import AllDestination from './pages/AllDestination';
 import AllTourPackages from './pages/AllTourPackages';
 import Contact from './pages/Contact';
@@ -50,6 +51,9 @@ function App() {
           </Route>
           <Route path="/register">
             <Register />
+          </Route>
+          <Route path="/admin/add-destinantion">
+            <AddDestinations />
           </Route>
           <Route exact path="/">
             <Home />
