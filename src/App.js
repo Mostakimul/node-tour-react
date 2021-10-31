@@ -16,6 +16,7 @@ import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Booking from './pages/Private/Booking';
+import MyBookings from './pages/Private/MyBookings';
 import Register from './pages/Register';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
@@ -64,6 +65,10 @@ function App() {
           </Route>
           <PrivateRoute path="/book-tour/:id">
             <Booking />
+          </PrivateRoute>
+
+          <PrivateRoute path="/my-booking">
+            <MyBookings />
           </PrivateRoute>
 
           <Route exact path="/admin/add-destinantion">

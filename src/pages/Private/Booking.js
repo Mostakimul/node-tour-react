@@ -23,6 +23,7 @@ const Booking = () => {
     data.email = user?.email;
     data.name = user?.displayName;
     data.tourId = id;
+    data.status = 'pending';
 
     axios
       .post('http://localhost:5000/addBooking', data)
