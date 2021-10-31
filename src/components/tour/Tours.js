@@ -10,7 +10,7 @@ const Tours = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/allTours')
+      .get('https://stark-beach-13541.herokuapp.com/allTours')
       .then((res) => {
         setLoad(true);
         if (res.data) {

@@ -27,7 +27,7 @@ const AddDestinations = () => {
   // adding dest
   const onSubmit = (data) => {
     axios
-      .post('http://localhost:5000/addDestinantion', data)
+      .post('https://stark-beach-13541.herokuapp.com/addDestinantion', data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccessMsg(true);

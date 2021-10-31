@@ -20,7 +20,7 @@ const MyBookings = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/myBookings/${user.email}`)
+      .get(`https://stark-beach-13541.herokuapp.com/myBookings/${user.email}`)
       .then((res) => {
         if (res.data) {
           setMyBook(res.data);
@@ -36,7 +36,7 @@ const MyBookings = () => {
     let sure = window.confirm('Are you sure');
     if (sure) {
       axios
-        .delete(`http://localhost:5000/deleteBooking/${id}`)
+        .delete(`https://stark-beach-13541.herokuapp.com/deleteBooking/${id}`)
         .then((res) => {
           if (res.data.deletedCount) {
             const remainigBook = myBook.filter(

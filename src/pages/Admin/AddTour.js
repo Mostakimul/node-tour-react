@@ -28,7 +28,7 @@ const AddTour = () => {
   // adding tour
   const onSubmit = (data) => {
     axios
-      .post('http://localhost:5000/addTour', data)
+      .post('https://stark-beach-13541.herokuapp.com/addTour', data)
       .then((res) => {
         if (res.data.insertedId) {
           setSuccessMsg(true);

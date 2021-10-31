@@ -8,7 +8,7 @@ const DetailsDestinantion = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/destinantionDetails/${id}`)
+      .get(`https://stark-beach-13541.herokuapp.com/destinantionDetails/${id}`)
       .then((res) => {
         if (res.data) {
           setDestination(res.data);

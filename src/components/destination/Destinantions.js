@@ -10,7 +10,7 @@ const Destinantions = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/allDestinantion')
+      .get('https://stark-beach-13541.herokuapp.com/allDestinantion')
       .then((res) => {
         setLoad(true);
         if (res.data) {

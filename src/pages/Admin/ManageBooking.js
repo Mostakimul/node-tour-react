@@ -22,7 +22,7 @@ const ManageBooking = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/allBookings')
+      .get('https://stark-beach-13541.herokuapp.com/allBookings')
       .then((res) => {
         setAllBookings(res.data);
         setLoad(false);
@@ -36,7 +36,7 @@ const ManageBooking = () => {
   const handleStatus = (id) => {
     let data = { status: 'approved' };
     axios
-      .put(`http://localhost:5000/changeStatus/${id}`, data)
+      .put(`https://stark-beach-13541.herokuapp.com/changeStatus/${id}`, data)
       .then((res) => {
         setStatus(!status);
       })
@@ -50,7 +50,7 @@ const ManageBooking = () => {
     let sure = window.confirm('Are you sure');
     if (sure) {
       axios
-        .delete(`http://localhost:5000/deleteBooking/${id}`)
+        .delete(`https://stark-beach-13541.herokuapp.com/deleteBooking/${id}`)
         .then((res) => {
           setStatus(!status);
         })

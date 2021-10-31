@@ -26,7 +26,7 @@ const Booking = () => {
     data.status = 'pending';
 
     axios
-      .post('http://localhost:5000/addBooking', data)
+      .post('https://stark-beach-13541.herokuapp.com/addBooking', data)
       .then((res) => {
         if (res.data.insertedId) {
           setBook(true);

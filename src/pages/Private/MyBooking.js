@@ -8,7 +8,7 @@ const MyBooking = ({ book, handleDelete }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/tourDeatils/${tourId}`)
+      .get(`https://stark-beach-13541.herokuapp.com/tourDeatils/${tourId}`)
       .then((res) => {
         if (res.data) {
           let tripData = res.data;

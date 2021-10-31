@@ -13,7 +13,7 @@ const DetailsTour = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/tourDeatils/${id}`)
+      .get(`https://stark-beach-13541.herokuapp.com/tourDeatils/${id}`)
       .then((res) => {
         if (res.data) {
           setTour(res.data);
