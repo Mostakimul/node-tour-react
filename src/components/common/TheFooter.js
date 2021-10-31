@@ -10,8 +10,8 @@ const TheFooter = () => {
             {/* conatct */}
             <div className="space-y-2">
               <h3 className="font-semibold text-2xl">Contact Us</h3>
-              <p>Email: hello@disin.com</p>
-              <p>Phone: +70 554 2254</p>
+              <p>Email: hello@GTour.com</p>
+              <p>Phone: +70 754 2254</p>
               <p>Location: Via Rogoredo, Mialn, Italy</p>
             </div>
             {/* page link */}
