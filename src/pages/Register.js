@@ -152,7 +152,7 @@ const Register = () => {
             Sign In with Google
           </button>
           <Link
-            className="bg-blue-700 py-2 px-5 mx-3 text-white capitalize rounded-md inline-block shadow-md"
+            className="bg-blue-700 mt-3 py-2 px-5 mx-3 text-white capitalize rounded-md inline-block shadow-md"
             to="/login"
           >
             Sign In with Email
