@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { IoCloseCircleOutline } from 'react-icons/io5';
+import { useHistory, useLocation } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 const AddDestinations = () => {
   const {
     register,
@@ -10,6 +12,15 @@ const AddDestinations = () => {
     reset,
     formState: { errors },
   } = useForm();
+  const { isAdmin } = useAuth();
+  // history, location
+  const history = useHistory();
+  const location = useLocation();
+  const url = location.state?.from || '/home';
+
+  if (!isAdmin) {
+    history.push(url);
+  }
 
   const [successMsg, setSuccessMsg] = useState(false);
 

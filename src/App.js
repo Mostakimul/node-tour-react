@@ -7,6 +7,7 @@ import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
 import AddDestinations from './pages/Admin/AddDestinations';
 import AddTour from './pages/Admin/AddTour';
+import ManageBooking from './pages/Admin/ManageBooking';
 import AllDestination from './pages/AllDestination';
 import AllTourPackages from './pages/AllTourPackages';
 import Contact from './pages/Contact';
@@ -76,6 +77,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/admin/add-tour">
             <AddTour />
+          </PrivateRoute>
+          <PrivateRoute exact path="/admin/all-bookings">
+            <ManageBooking />
           </PrivateRoute>
           <Route exact path="/">
             <Home />

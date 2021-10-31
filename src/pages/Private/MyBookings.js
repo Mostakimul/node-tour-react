@@ -28,6 +28,7 @@ const MyBookings = () => {
           if (res.data) {
             let tripData = res.data;
             tripData.status = booking.status;
+            tripData.bId = booking._id;
             setBookDetails([...bookDetails, tripData]);
           }
         })
@@ -36,6 +37,26 @@ const MyBookings = () => {
         });
     });
   }, [myBook]);
+
+  // handleDelete
+  const handleDelete = (id) => {
+    let sure = window.confirm('Are you sure');
+    if (sure) {
+      axios
+        .delete(`http://localhost:5000/deleteBooking/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount) {
+            const remainigBook = bookDetails.filter(
+              (bookDetail) => bookDetail.bId !== id
+            );
+            setBookDetails(remainigBook);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   return (
     <div className="bg-gray-100">
@@ -65,6 +86,7 @@ const MyBookings = () => {
                 <th className="border border-gray-600">Date</th>
                 <th className="border border-gray-600">Country</th>
                 <th className="border border-gray-600">Status</th>
+                <th className="border border-gray-600">Action</th>
               </tr>
             </thead>
             <tbody>
@@ -78,6 +100,14 @@ const MyBookings = () => {
                     </td>
                     <td className="border border-gray-600">
                       {bkdetails.status}
+                    </td>
+                    <td className="border border-gray-600">
+                      <button
+                        onClick={() => handleDelete(bkdetails.bId)}
+                        className="block bg-red-700 text-white py-1 px-2 m-1 mx-auto rounded-md"
+                      >
+                        Delete Booking
+                      </button>
                     </td>
                   </tr>
                 );

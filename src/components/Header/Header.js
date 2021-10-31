@@ -22,7 +22,10 @@ const Header = () => {
               Trips, experiences, and places. All in one service.
             </p>
             <div className="text-center">
-              <Link className="bg-red-600 hover:bg-red-700 text-gray-50 py-2 px-5 rounded-md shadow-md m-1 font-medium inline-block">
+              <Link
+                to="/tour-packages"
+                className="bg-red-600 hover:bg-red-700 text-gray-50 py-2 px-5 rounded-md shadow-md m-1 font-medium inline-block"
+              >
                 See Our Packages
               </Link>
               <Link

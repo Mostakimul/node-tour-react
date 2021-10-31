@@ -85,6 +85,16 @@ const TheNavbar = () => {
                     >
                       Contact
                     </Link>
+                    {!isAdmin && user.email ? (
+                      <Link
+                        to="/my-booking"
+                        className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                      >
+                        My Booking
+                      </Link>
+                    ) : (
+                      ''
+                    )}
                     {isAdmin ? (
                       <>
                         <Link
@@ -98,6 +108,12 @@ const TheNavbar = () => {
                           className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
                         >
                           Add Tour
+                        </Link>
+                        <Link
+                          to="/admin/all-bookings"
+                          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                          All Bookings
                         </Link>
                       </>
                     ) : (

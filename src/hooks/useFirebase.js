@@ -60,6 +60,7 @@ const useFirebase = () => {
         setUser(user);
       } else {
         setUser({});
+        setIsAdmin(false);
       }
       setIsLoading(false);
     });
@@ -71,7 +72,10 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {})
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setIsAdmin(false);
+        setIsLoading(false);
+      });
   };
 
   return {
