@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const TheNavbar = () => {
-  const { user, logOut } = useAuth();
+  const { user, logOut, isAdmin } = useAuth();
   return (
     <Disclosure as="nav">
       {({ open }) => (
@@ -85,6 +85,24 @@ const TheNavbar = () => {
                     >
                       Contact
                     </Link>
+                    {isAdmin ? (
+                      <>
+                        <Link
+                          to="/admin/add-destinantion"
+                          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                          Add Destinantion
+                        </Link>
+                        <Link
+                          to="/admin/add-tour"
+                          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                        >
+                          Add Tour
+                        </Link>
+                      </>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               </div>

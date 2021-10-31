@@ -15,6 +15,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
+  const [isAdmin, setIsAdmin] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const auth = getAuth();
@@ -53,6 +54,9 @@ const useFirebase = () => {
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (user) => {
       if (user) {
+        if (user.email === 'admin@gmail.com') {
+          setIsAdmin(true);
+        }
         setUser(user);
       } else {
         setUser({});
@@ -74,6 +78,8 @@ const useFirebase = () => {
     user,
     setUser,
     isLoading,
+    setIsAdmin,
+    isAdmin,
     setIsLoading,
     signInWithGoogle,
     logOut,

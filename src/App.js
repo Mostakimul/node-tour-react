@@ -71,12 +71,12 @@ function App() {
             <MyBookings />
           </PrivateRoute>
 
-          <Route exact path="/admin/add-destinantion">
+          <PrivateRoute exact path="/admin/add-destinantion">
             <AddDestinations />
-          </Route>
-          <Route exact path="/admin/add-tour">
+          </PrivateRoute>
+          <PrivateRoute exact path="/admin/add-tour">
             <AddTour />
-          </Route>
+          </PrivateRoute>
           <Route exact path="/">
             <Home />
           </Route>

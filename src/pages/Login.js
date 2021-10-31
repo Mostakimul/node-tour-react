@@ -9,6 +9,7 @@ const Login = () => {
     signInWithGoogle,
     setUser,
     setIsLoading,
+    setIsAdmin,
     user,
     loginWithEmailAndPassword,
   } = useAuth();
@@ -33,6 +34,9 @@ const Login = () => {
     loginWithEmailAndPassword(data.email, data.password)
       .then((res) => {
         setIsLoading(true);
+        if (res.user.email === 'admin@gmail.com') {
+          setIsAdmin(true);
+        }
         setUser(res.user);
         history.push(url);
       })
