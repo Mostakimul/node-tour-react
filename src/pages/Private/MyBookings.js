@@ -1,11 +1,22 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
+import MyBooking from './MyBooking';
 
 const MyBookings = () => {
+  // history, location
+  const history = useHistory();
+  const location = useLocation();
+  const url = location.state?.from || '/home';
+
   const [myBook, setMyBook] = useState([]);
-  const [bookDetails, setBookDetails] = useState([]);
-  const { user } = useAuth();
+
+  const { user, isAdmin } = useAuth();
+
+  if (isAdmin) {
+    history.push(url);
+  }
 
   useEffect(() => {
     axios
@@ -20,24 +31,6 @@ const MyBookings = () => {
       });
   }, []);
 
-  useEffect(() => {
-    myBook.map((booking) => {
-      axios
-        .get(`http://localhost:5000/tourDeatils/${booking.tourId}`)
-        .then((res) => {
-          if (res.data) {
-            let tripData = res.data;
-            tripData.status = booking.status;
-            tripData.bId = booking._id;
-            setBookDetails([...bookDetails, tripData]);
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    });
-  }, [myBook]);
-
   // handleDelete
   const handleDelete = (id) => {
     let sure = window.confirm('Are you sure');
@@ -46,10 +39,10 @@ const MyBookings = () => {
         .delete(`http://localhost:5000/deleteBooking/${id}`)
         .then((res) => {
           if (res.data.deletedCount) {
-            const remainigBook = bookDetails.filter(
-              (bookDetail) => bookDetail.bId !== id
+            const remainigBook = myBook.filter(
+              (bookDetail) => bookDetail._id !== id
             );
-            setBookDetails(remainigBook);
+            setMyBook(remainigBook);
           }
         })
         .catch((err) => {
@@ -90,28 +83,13 @@ const MyBookings = () => {
               </tr>
             </thead>
             <tbody>
-              {bookDetails.map((bkdetails) => {
-                return (
-                  <tr key={bkdetails._id}>
-                    <td className="border border-gray-600">{bkdetails.city}</td>
-                    <td className="border border-gray-600">{bkdetails.date}</td>
-                    <td className="border border-gray-600">
-                      {bkdetails.country}
-                    </td>
-                    <td className="border border-gray-600">
-                      {bkdetails.status}
-                    </td>
-                    <td className="border border-gray-600">
-                      <button
-                        onClick={() => handleDelete(bkdetails.bId)}
-                        className="block bg-red-700 text-white py-1 px-2 m-1 mx-auto rounded-md"
-                      >
-                        Delete Booking
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
+              {myBook.map((book) => (
+                <MyBooking
+                  key={book._id}
+                  book={book}
+                  handleDelete={handleDelete}
+                ></MyBooking>
+              ))}
             </tbody>
           </table>
         </div>
