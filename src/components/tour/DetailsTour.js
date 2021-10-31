@@ -6,14 +6,12 @@ import { BsClock } from 'react-icons/bs';
 import { FaPlaneArrival, FaPlaneDeparture } from 'react-icons/fa';
 import { MdAccessTimeFilled } from 'react-icons/md';
 import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
 
 const DetailsTour = () => {
   const { id } = useParams();
   const [tour, setTour] = useState({});
 
   useEffect(() => {
-    console.log(id);
     axios
       .get(`http://localhost:5000/tourDeatils/${id}`)
       .then((res) => {
@@ -48,14 +46,6 @@ const DetailsTour = () => {
           <h2 className="text-center text-white font-semibold text-4xl pt-10">
             {tour.country}
           </h2>
-          <div className="text-center">
-            <Link
-              className="bg-blue-500 inline-block my-2 text-white text-xl font-semibold rounded-md text-center shadow-md py-1 px-4"
-              to="/book-tour"
-            >
-              Book Now
-            </Link>
-          </div>
         </div>
       </div>
       <div className="container py-10 space-y-2 ">

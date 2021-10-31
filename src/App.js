@@ -15,8 +15,9 @@ import EventPackage from './pages/EventPackage';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Booking from './pages/Private/Booking';
 import Register from './pages/Register';
-// import PrivateRoute from './PrivateRoute/PrivateRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -61,6 +62,10 @@ function App() {
           <Route path="/register">
             <Register />
           </Route>
+          <PrivateRoute path="/book-tour/:id">
+            <Booking />
+          </PrivateRoute>
+
           <Route exact path="/admin/add-destinantion">
             <AddDestinations />
           </Route>

@@ -7,7 +7,6 @@ const DetailsDestinantion = () => {
   const [destination, setDestination] = useState({});
 
   useEffect(() => {
-    console.log(id);
     axios
       .get(`http://localhost:5000/destinantionDetails/${id}`)
       .then((res) => {
