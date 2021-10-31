@@ -70,7 +70,7 @@ const About = () => {
           <div className="grid grid-cols-1 gap-5 md:grid-cols-5">
             {team.map((tm) => {
               return (
-                <div className="text-center py-5">
+                <div key={tm.name} className="text-center py-5">
                   <img
                     src={tm.img}
                     alt={tm.name}

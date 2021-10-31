@@ -39,7 +39,10 @@ const Gallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-7">
           {imgLinks.map((img) => {
             return (
-              <div className="bg-white rounded-md shadow-md p-2 hover:shadow-xl hover:transition hover:ease-in-out hover:duration-700">
+              <div
+                key={img.img}
+                className="bg-white rounded-md shadow-md p-2 hover:shadow-xl hover:transition hover:ease-in-out hover:duration-700"
+              >
                 <img className="rounded-md" src={img.img} alt="img" />
               </div>
             );

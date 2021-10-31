@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 const EventPackage = () => {
   const packages = [
     {
+      id: 1,
       type: 'Personal',
       price: '199',
       duration: 'Half',
@@ -14,6 +15,7 @@ const EventPackage = () => {
       photographer: '1',
     },
     {
+      id: 2,
       type: 'Group',
       price: '399',
       duration: 'Full',
@@ -24,6 +26,7 @@ const EventPackage = () => {
       photographer: '2',
     },
     {
+      id: 3,
       type: 'Personal',
       price: '299',
       duration: 'Full',
@@ -34,6 +37,7 @@ const EventPackage = () => {
       photographer: '1',
     },
     {
+      id: 4,
       type: 'Group',
       price: '599',
       duration: 'Full',
@@ -71,7 +75,10 @@ const EventPackage = () => {
           <div className="grid grid-cols-1 gap-10 md:grid-cols-4">
             {packages.map((pack) => {
               return (
-                <div className="bg-white hover:shadow-xl rounded-md text-center py-5 space-y-4 shadow-md">
+                <div
+                  key={pack.id}
+                  className="bg-white hover:shadow-xl rounded-md text-center py-5 space-y-4 shadow-md"
+                >
                   <h2 className="font-semibold text-red-500 text-3xl">
                     {pack.type}
                   </h2>
