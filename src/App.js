@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TheFooter from './components/common/TheFooter';
 import TheNavbar from './components/common/TheNavbar';
 import DetailsDestinantion from './components/destination/DetailsDestinantion';
+import DetailsTour from './components/tour/DetailsTour';
 import AuthProvider from './context/AuthProvider';
 import About from './pages/About';
 import AddDestinations from './pages/Admin/AddDestinations';
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/tour-packages">
             <AllTourPackages />
+          </Route>
+          <Route path="/packages-details/:id">
+            <DetailsTour />
           </Route>
           <Route path="/our-destinations">
             <AllDestination />
