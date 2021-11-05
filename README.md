@@ -4,12 +4,9 @@ This project was developed by react, firebase authentication and mongodb.
 
 > Live link: [GTour](https://react-travel-c7477.web.app/).
   - https://react-travel-c7477.web.app/
-
-> Client Github Link: [GitLink](https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-Mostakimul)
-  - https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-Mostakimul
   
-> Server Github Link: [Server](https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-Mostakimul)
-  - https://github.com/programming-hero-web-course1/tourism-or-delivery-website-server-side-Mostakimul
+> Server Github Link: [Server](https://github.com/Mostakimul/node-tour-server)
+  - https://github.com/Mostakimul/node-tour-server
 
 
 > Travel with GTour and make you tour more easier, cost efficient. 
